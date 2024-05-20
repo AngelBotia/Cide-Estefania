@@ -1,0 +1,99 @@
+{{yield}}
+
+<form id="Form-Usuarios" style="
+        width: 100%;
+        height: 80%;
+        display: flex;
+        ">
+<div class="div-form-usuarios" style="width: 50%;height: 90%; padding:1.5vw 3.5vw 1.5vw 3.5vw">
+
+
+<Inputform
+@placeholder=" nombre"
+@name="name"
+@type="text"
+>Nombre</Inputform>
+
+<Inputform
+@placeholder="s apellidos"
+@name="apellido"
+@type="text"
+>Apellidos</Inputform>
+
+<Inputform
+@placeholder=" curso"
+@name="curso"
+@type="text"
+>Curso</Inputform>
+
+<Inputform
+@placeholder=" direccion"
+@name="direccion"
+@type="text"
+>Direccion</Inputform>
+
+<Inputform
+@placeholder=" fecha de nacimiento"
+@name="fecha_nacimiento"
+@type="text"
+>Fecha de nacimiento</Inputform>
+
+<div style="display: flex; align-items: center; color:gray">
+    <p style="padding: 1vw; font-size: larger;">Familia numerosa</p>
+
+<label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+</label>
+   
+
+</div>
+
+
+</div>
+
+
+
+
+ <div class="
+    div-form-usuarios" style="
+    width: 50%;
+    height: 90%;
+    padding:1.5vw 3.5vw 1.5vw 3.5vw
+             ">
+
+<Inputform
+@placeholder=" DNI"
+@name="dni"
+@type="text"
+>DNI(Alumno)</Inputform>
+
+<Inputform
+@placeholder=" numero de telefono"
+@name="telefono"
+@type="text"
+>Apellidos(Alumno)</Inputform>
+
+<Inputform
+@placeholder=" DNI de contacto"
+@name="dni_contacto"
+@type="text"
+>DNI(Contacto)</Inputform>
+
+<Inputform
+@placeholder=" email"
+@name="email"
+@type="email"
+>Email</Inputform>
+
+<Inputform
+@placeholder=" telefono de contacto"
+@name="tel_contacto"
+@type="text"
+>Telefono(Contacto)</Inputform>
+
+
+
+<Button @margin-left="14">Crear estudiante</Button>
+</div>
+</form> 
