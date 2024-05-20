@@ -1,2 +1,167 @@
 {{page-title "Login"}}
-<div>SOY EL LOGIN</div>
+<body style="   
+display: flex;
+height: 100%;
+width: 100%;
+margin: 0;
+background-color: aqua;
+/* align-content: center; */
+justify-content: center;
+align-items: center;
+">
+    <!--IMAGEN FONDO -->
+    <img src="fondos-login/fondoLOGIN.png" alt="" style="
+    display: block;
+    width: 100%; 
+    height: 100%;
+    filter: blur(4px);
+    ">
+    <!--DIV FOTO-FORMULARIO -->
+    <div 
+        style="display: flex; width: 50%; height: 70%; background-color: aqua; position: absolute; border-radius: 30px ">
+        <div class="loginFormIMG" style="width: 30%; height: 100%;">
+            
+            <!-- IMAGEN FORMULARIO -->
+            <img class="imgInForm" style="
+            display: block;
+            width: 115%;
+            height: 100%;
+            border-radius: 30px 0px 0px 30px;
+            object-fit: cover;
+        " alt="" src="fondos-login/fondoFormLogin.png">
+
+        </div>
+
+
+        <!--FORMULARIO -->
+        <div class="divFormLogin" style="
+        background-color: white; 
+        width: 70%; 
+        height: 100%; 
+        border-radius: 30px">
+
+        <form class="formLogin" action="" style="    
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        /* align-content: center; */
+        align-items: center;
+        ">
+                <!--TITULO -->
+                <div style=" 
+                    width: 100%;
+                    height: 20%;
+                    margin-top: 20px;
+                ">
+                    <h1 style="
+                        color: black;
+                        text-align: center;
+                        font-family: system-ui;">
+                        Registro
+                    </h1>
+                </div>
+
+                <!--LABEL 1 -->
+                <label for="" style=" 
+                width: 100%;
+                display: grid;
+                justify-content: center;
+                font-family: system-ui;
+                text-align: left;
+            ">
+                    Nombre
+                    <input placeholder="Introduce tu nombre" 
+                    style="    
+                     width: 23vw;
+                    height: 2.5vw;
+                    border-radius: 10px;
+                    padding: 10px;
+                    background-color: lightgray;
+                    border-color: transparent;
+                    margin-bottom: 25px;
+                    " type="text" name="" id="">
+                </label>
+
+
+                <!--LABEL 2 -->
+                <label for="" style=" 
+                width: 100%;
+                display: grid;
+                justify-content: center;
+                font-family: system-ui;
+            ">
+                    Email
+                    <input placeholder="Introduce tu Email" 
+                    style="    
+                     width: 23vw;
+                    height: 2.5vw;
+                    border-radius: 10px;
+                    padding: 10px;
+                    background-color: lightgray;
+                    border-color: transparent;
+                    margin-bottom: 25px;
+                    " type="text" name="" id="">
+                </label>
+
+                
+
+                
+                <!--LABEL 3 -->
+                <label for="" style=" 
+                width: 100%;
+                display: grid;
+                justify-content: center;
+                font-family: system-ui;
+            ">
+                    Contraseña
+                    <input placeholder="Introduce tu contraseña" style="    
+                     width: 23vw;
+                    height: 2.5vw;
+                    border-radius: 10px;
+                    padding: 10px;
+                    background-color: lightgray;
+                    border-color: transparent;
+                    margin-bottom: 25px;
+                    " type="text" name="" id="">
+                </label>
+
+
+                <!--BOTTON -->
+                <button style="
+                    height: 40px;
+                    width: 200px;
+                    border-radius: 10px;
+                    border-color: transparent;
+                    background-color: green;
+                    text-align: center;
+                    color: white;
+                    font-family: system-ui;
+                    font-size: larger
+                                ">
+                Regitrate
+                </button>
+
+                <!-- HAS OLVIDADO LA CONTRASEÑA?-->
+                <p style="
+                    font-family: system-ui;
+                    font-size: small;
+                    width: 70%;
+                    margin-top: 5px;
+                ">
+                ¿Ya tienes cuenta? 
+                <a href=""
+                style="
+                    color: green;
+                    font-style: italic;">
+                    Inicia sesion
+                </a>
+                </p>
+
+            </form>
+
+
+        </div>
+    </div>
+
+</body>
