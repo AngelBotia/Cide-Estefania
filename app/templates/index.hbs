@@ -1,0 +1,337 @@
+{{page-title "Cide"}}
+
+
+<body class="grid-container">
+
+
+     {{!-- HEADER --}}
+    <header class="header" style="background-color: white;">
+        <div class="logo" style="display: block; margin-top:30px ;"><img src="Logo_cide.webp" style="height: 100%; width: 100%;" alt=""></div>
+
+        <div class="user_Container" style="display: flex; background-color: white; width:20%; height: 100%; justify-content: space-around;">
+            <div style="background-color: lightgray; 
+            height:30%; 
+            width: 49%; 
+            margin: auto; 
+            margin-left: 10px; 
+            text-align: justify; 
+            justify-content: center; 
+            display: flex;   
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;">
+
+            <p style="margin: auto; ">
+                Usuario
+            </p>
+
+            </div>
+
+            <div style="
+            background-color: green;
+            height: 70px;
+            width: 70px;
+            margin: auto 20% auto auto;
+            border-radius: 100%;">
+            <img style="
+            height: 100%;
+            width: 100%;
+            border-radius: 100%; 
+            border: 1px solid gray;
+            " src="Icon-Layout/foto-perfil.png" alt="">
+            </div>
+        </div>
+    </header>
+
+
+
+  {{!-- RUTAS--}}
+    <aside class="sidebar" style="background-color: white;">
+        {{!-- BOTONES--}}
+        <div class="route" style="justify-content: center; align-items: center; display: flex; background-color: darkgreen;"><div>🎛️</div><a style="margin-left: 10px; color: white;  text-decoration: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" href="">Principal</a></div>
+        <div class="route" style="justify-content: center; align-items: center; display: flex; background-color: white;"><div>📖</div><a style="margin-left: 10px; color: gray; text-decoration: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" href="">Comandas</a></div>
+        <div class="route" style="justify-content: center; align-items: center; display: flex; background-color: white;"><div>📆</div><a style="margin-left: 10px; color:  gray; text-decoration: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" href="">Facturacion</a></div>
+        <div class="route" style="justify-content: center; align-items: center; display: flex; background-color: white;"><div>🙎‍♂️</div><a style="margin-left: 10px; color: gray; text-decoration: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;" href="">Estudiantes</a></div>
+    </aside>
+
+
+
+
+
+
+      {{!-- MAIN--}}
+{{!----------------------------------------------------------------------------------------------------------------}}
+<article class="main">
+
+    {{outlet}}
+    {{!-- <!-- TITULO -->
+        <h1  style="
+            text-align: left;
+            padding: 10px;
+            "
+        >Estudiantes
+        </h1> --}}
+        
+{{!---------------------------------------COMPONENTE1------------------------------------------------------>
+
+      <!-- TABLA--}}
+{{!-- <table class="table" 
+        style="
+            height: 88%;
+            width: 100%;
+            text-align: center;
+            background-color: white;
+            font-family: system-ui;
+        
+            ">
+        <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                    <th>Dirección</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>DNI</th>
+                    <th>Contacto Principal</th>
+                    <th>DNI de Contacto</th>
+                    <th>Teléfono de Contacto</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nombre1</td>
+                    <td>Apellidos1</td>
+                    <td>Dirección1</td>
+                    <td>Fecha1</td>
+                    <td>45454545S</td>
+                    <td>Contacto1</td>
+                    <td>DNIContacto1</td>
+                    <td>TeléfonoContacto1</td>
+                </tr>
+            </tbody>
+        </table> --}}
+{{!----------------------------------------------------------------------------------------------------------------}}
+
+{{!------------------------------------------COMPONENTE2------------------------------------------------------------->
+
+    <!--FORMULARIO USUARIO --}}
+{{!-- <form class="Form-Usuarios" style="
+        width: 100%;
+        height: 90%;
+        display: flex;
+        ">
+    <div class="div-form-usuarios" style="
+            width: 50%;
+            height: 100%;
+            padding: 30px;
+            ">
+    <label for="" style=" 
+             width: 100%;
+             display: grid;
+             justify-content: center;
+             font-family: system-ui;
+             text-align: left;
+         ">
+         
+
+    BOTON CREAR USUARIO
+ <button style="
+        padding: 0.8vw;
+        border-radius: 0.9vw;
+        color: white;
+        background: green;
+        border: none;
+        margin-left: 10vw;
+        font-size: medium;
+    ">
+    Crear usuario
+    </button>
+
+
+
+
+ <div class="
+    div-form-usuarios" style="
+    width: 50%;
+    height: 100%;
+             ">
+
+
+
+
+ SWITCH TRUE O FALSE VERDE
+<label class="switch">
+    <input type="checkbox">
+    <span class="slider round"></span>
+  </label>
+
+</div>
+</form>  --}}
+{{!----------------------------------------------------------------------------------------------------------------}}
+
+
+
+{{!-------------------------------------------COMPONENTE3------------------------------------------------>
+<!-- FORMULARIO USUARIO PRODUCTOS --}}
+{{!-- <form class="formProductos" style="
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /* align-content: center; */
+    justify-content: center;
+    align-items: center;
+">
+
+
+<!-- LABEL ENTERA -->
+<div class="itemFormProduct"
+style="
+    display: flex;
+    margin: auto;
+    align-items: center;
+">
+
+<p>Nombre del producto</p>
+
+<label class="switch"
+style="
+margin: 0.5vw;
+"
+
+>
+    <input type="checkbox">
+    <span class="slider round"></span>
+</label>
+<input type="number"
+style="
+    height: 3vw;
+    width: 4vw;
+    border-radius: 1vw;
+    border: 1px solid gray;
+    text-align: center;
+    font-size: large;
+">
+</div>
+
+</form> --}}
+
+
+
+
+</article>
+{{!----------------------------------------------------------------------------------------------------------------}}
+
+
+
+
+
+
+
+
+
+
+{{!----------------------------------------------------------------------------------------------------------------}}
+                                 {{!-- SECCION DERECHA Y CONTACTO--}}
+<section class="section" style="
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    ">
+       
+    {{!-- DIV VERDE CONTACTO--}}
+<div class="infodiv" style="
+    width: 80%;
+    height: 30%;
+    margin-top: 30px;
+    padding: 5%;
+    text-align: left;
+    color: white;
+    border-radius: 10px;
+    background-color: green;
+    align-items: center;
+    ">  
+    {{!-- CONTACTO--}}
+   <p style="
+   width: 100%;
+   margin-top: -10px;
+   "><b
+   >Contacto</b>
+   </p>
+
+     {{!-- Label 1 --}}
+<div style=" 
+    width: 100%;
+    height: 30%; 
+    display: flex;
+    font-size: 12px;
+   " >
+
+    <img src="Icon-Layout/navigation_icon.png" alt="" style="
+        height: 30px;
+        object-fit: scale-down;
+        width: 40px;
+    ">
+        Carrer de l'Arner, 3, Ponent, 07013 Palma, Illes Balears
+</div>
+
+  {{!-- Label 2 --}}
+<div style="
+width: 100%;
+height: 30%; 
+display: flex;
+font-size: 14px;
+align-items:center ;
+" >
+<img src="Icon-Layout/telefono.png" alt="" style="
+    height: 30px;
+    object-fit: scale-down;
+    width: 40px;
+">971 60 64 99</div>
+
+   
+  {{!-- Label 3 --}}
+ <div style="
+    width: 100%;
+    height: 30%; 
+    display: flex;
+    font-size: 14px;
+    align-items:center ;
+    " >
+    <img src="Icon-Layout/CorreoPNG.png" alt="" style="
+        height: 25px;
+        object-fit: scale-down;
+        width: 45px;
+    ">Cide@cide.es
+</div>
+
+</div>
+
+
+</section>
+{{!----------------------------------------------------------------------------------------------------------------}}
+
+
+
+
+ 
+
+ {{!-- FOOTER --}}
+<footer class="footer"
+    style="
+    display: flex;
+    justify-content: space-around;
+    font-size: 10px;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;">
+
+    <hr style="color: black; width: 90%;"/>
+    <p style="width: 100%;">Desing by Angel Botia ♠️</p>
+</footer>
+</body>
+
+
+
