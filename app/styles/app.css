@@ -3,8 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:
-    system-ui;
+  font-family: system-ui;
 }
 
 body {
@@ -13,18 +12,24 @@ body {
   text-align: center;
 }
 
-
 .route {
   width: 80%;
   height: 10%;
   margin: 20px 0 0 20px;
   border-radius: 20px;
-  background-color: antiquewhite;
-  justify-content: center; align-items: center; display: flex; background-color: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: white;
 }
-.route a{
-  margin-left: 10px; color: gray; text-decoration: none; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+.route a {
+  margin-left: 10px;
+  color: gray;
+  text-decoration: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .logo {
   margin: 0 0 0 20px;
   background-color: green;

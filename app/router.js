@@ -13,4 +13,5 @@ Router.map(function () {
   this.route('principal');
   this.route('estudiantes');
   this.route('facturacion');
+  this.route('registre');
 });
