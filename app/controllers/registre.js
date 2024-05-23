@@ -98,7 +98,6 @@ export default class RegistreController extends Controller {
     setTimeout(function () {
       dialog.close();
     }, 1000);
-
   }
 
   cleanFormInputs(event) {

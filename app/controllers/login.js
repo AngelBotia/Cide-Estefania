@@ -24,7 +24,7 @@ export default class LoginController extends Controller {
     if (this.login.authUser(credential)) {
       const crendentialJSON = JSON.stringify(credential);
       localStorage.setItem(this.USER_CREDENTIALS, crendentialJSON);
-      this.router.transitionTo('axis');
+      this.router.transitionTo('/principal');
     } else {
       window.alert(`las credenciales de ${credential.user} no son correctas`);
     }
