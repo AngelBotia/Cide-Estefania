@@ -1,9 +1,14 @@
 import Service from '@ember/service';
+import { service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class LoginService extends Service {
+  USER_CREDENTIALS = 'user_credential';
   USER_STORAGE = 'Login';
+
+  @service router;
+  @service login;
 
   @action
   authUser(credential) {
@@ -24,5 +29,12 @@ export default class LoginService extends Service {
         return true;
       }
     });
+  }
+
+  @action
+  logOut(event) {
+    const jsonVoidObject = JSON.stringify({});
+    localStorage.setItem('user_credential', jsonVoidObject);
+    this.router.transitionTo('/login');
   }
 }

@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember/service';
 
-export default class PrincipalRoute extends Route {
+export default class IndexRoute extends Route {
   @service router;
   @service login;
 
@@ -9,7 +9,7 @@ export default class PrincipalRoute extends Route {
     const credential = JSON.parse(localStorage.getItem('user_credential'));
 
     if (this.login.authUser(credential)) {
-      this.router.transitionTo('/principal');
+      this.router.transitionTo('/');
     } else {
       this.router.transitionTo('/login');
     }

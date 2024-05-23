@@ -1,18 +1,17 @@
- 
+
  <body class="grid-container">
-    
+
     <header class="header" style="background-color: white;">
         <div class="logo" style="display: block; margin-top:30px ;"><img src="Logo_cide.webp" style="height: 100%; width: 100%;" alt=""></div>
 
-        <div class="user_Container" style="display: flex; background-color: white; width:20%; height: 100%; justify-content: space-around;">
-            <div style="background-color: lightgray; 
-            height:30%; 
-            width: 49%; 
-            margin: auto; 
-            margin-left: 10px; 
-            text-align: justify; 
-            justify-content: center; 
-            display: flex;   
+        <div class="user_Container" style="display: flex; background-color: white;  width: 30rem; height: 100%; justify-content: space-around; align-items: center;">
+            <div style="background-color: lightgray;
+            height: 2vw;
+            width: 40%;
+            margin: 1rem;
+            text-align: justify;
+            justify-content: center;
+            display: flex;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             border-bottom-left-radius: 20px;
@@ -25,19 +24,35 @@
             </div>
 
             <div style="
-            background-color: green;
-            height: 70px;
-            width: 70px;
-            margin: auto 20% auto auto;
+            height: auto
+            width: auto;
+            margin-right: 0
             border-radius: 100%;">
             <img style="
-            height: 100%;
+              height: 3vw;
             width: 100%;
-            border-radius: 100%; 
+            border-radius: 100%;
             border: 1px solid gray;
             " src="Icon-Layout/foto-perfil.png" alt="">
             </div>
-        </div>
+
+
+{{!-- LogOut --}}
+            <div onclick={{@logOut}} style="
+                width: 1;
+                height: auto
+                padding: 1vw;
+            "><img style="
+                width: 2vw;
+                height: 2vw;
+            " src="logOut.png" alt="">
+            </div>
+           </div>
+
+
+
+
+
     </header>
 
 
@@ -59,7 +74,7 @@
 
 
 <article class="main">
-        
+
   {{yield}}
 
 
@@ -82,7 +97,7 @@
     flex-direction: column;
     align-items: center;
     ">
-       
+
 
 <div class="infodiv" style="
     width: 80%;
@@ -94,7 +109,7 @@
     border-radius: 10px;
     background-color: green;
     align-items: center;
-    ">  
+    ">
 
    <p style="
    width: 100%;
@@ -104,9 +119,9 @@
    </p>
 
 
-<div style=" 
+<div style="
     width: 100%;
-    height: 30%; 
+    height: 30%;
     display: flex;
     font-size: 12px;
    " >
@@ -122,7 +137,7 @@
 
 <div style="
 width: 100%;
-height: 30%; 
+height: 30%;
 display: flex;
 font-size: 14px;
 align-items:center ;
@@ -133,11 +148,11 @@ align-items:center ;
     width: 40px;
 ">971 60 64 99</div>
 
-   
+
 
  <div style="
     width: 100%;
-    height: 30%; 
+    height: 30%;
     display: flex;
     font-size: 14px;
     align-items:center ;
@@ -172,4 +187,4 @@ align-items:center ;
 
 
 
- 
+
