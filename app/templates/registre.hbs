@@ -1,2 +1,24 @@
 {{page-title "Registre"}}
-{{outlet}}
+<Loginform @title="Registro"
+ @buttonText="Registrate"
+ @askText="¿Ya tienes cuenta?" @routeText="Inicia sesion"
+@hrefAux="/login"
+@onHandleClick={{this.onHandleClick}}
+@idForm="registerForm"
+>
+
+
+  <Inputform @placeholder=" email" @name="email">Email
+  </Inputform>
+
+
+  <Inputform @placeholder=" usuario" @name="user">Usuario
+  </Inputform>
+
+  <Inputform @placeholder=" contraseña" @type="password" @name="password">Contraseña
+  </Inputform>
+
+  <Inputform @placeholder=" contraseña otra vez" @type="password" @name="repassword">Contraseña
+  </Inputform>
+
+</Loginform>

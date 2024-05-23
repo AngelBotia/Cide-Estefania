@@ -1,9 +1,13 @@
 import Controller from '@ember/controller';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { service } from '@ember/service';
+
 
 export default class RegistreController extends Controller {
   USER_CREDENTIALS = 'user_credential';
+
+  @service router;
 
   @tracked formData;
 
@@ -13,6 +17,7 @@ export default class RegistreController extends Controller {
 
   @action
   onHandleClick(event) {
+    debugger;
     const form = document.getElementById('registerForm');
 
     if (!form) return;
@@ -41,7 +46,7 @@ export default class RegistreController extends Controller {
     this.saveAsLocalStorage();
 
     this.showSuccesModal(event, true);
-    this.cleanFormInputs(event);
+    this.router.transitionTo('/login');
   }
 
   passwordIsEqual() {

@@ -1,111 +1,27 @@
 {{page-title "Login"}}
-<body style="
-display: flex;
-height: 100%;
-width: 100%;
-margin: 0;
-/* align-content: center; */
-justify-content: center;
-align-items: center;
-">
-    {{!--IMAGEN FONDO --}}
-    <img src="fondos-login/fondoLOGIN.png" alt="" style="
-    display: block;
+<Loginform
+@title="Inicia Sesion"
+@buttonText="Iniciar sesion"
+@askText="¿No tienes cuenta?"
+@routeText="Registrate"
+@hrefAux="/registre"
+@onHandleClick={{this.onHandleClick}}
+@idForm="loginForm"
+>
+      <div style="
     width: 100%;
-    height: 100%;
-    filter: blur(4px);
-    ">
-    {{!--DIV FOTO-FORMULARIO --}}
-    <div
-        style="display: flex; width: 50%; height: 70%;  position: absolute; border-radius: 30px ">
-        <div class="loginFormIMG" style="width: 30%; height: 100%;">
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+">
 
-            {{!-- IMAGEN FORMULARIO --}}
-            <img class="imgInForm" style="
-            display: block;
-            width: 115%;
-            height: 100%;
-            border-radius: 30px 0px 0px 30px;
-            object-fit: cover;
-        " alt="" src="fondos-login/fondoFormLogin.png">
+      <Inputform @placeholder=" usuario" @name="user">Usuario
+      </Inputform>
 
-        </div>
+      <Inputform @placeholder=" contraseña" @type="password" @name="password">Contraseña
+      </Inputform>
+      </div>
 
 
-        {{!--FORMULARIO --}}
-        <div class="divFormLogin" style="
-        background-color: white;
-        width: 70%;
-        height: 100%;
-        border-radius: 30px">
-
-        <form id="loginForm" style="
-        display: flex;
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        /* align-content: center; */
-        align-items: center;
-        ">
-                {{!--TITULO --}}
-                <div style="
-                    width: 100%;
-                    height: 20%;
-                    margin-top: 20px;
-                ">
-                    <h1 style="
-                        color: black;
-                        text-align: center;
-                        font-family: system-ui;">
-                        Iniciar Sesion
-                    </h1>
-                </div>
-
-             <Inputform
-              @placeholder=" usuario"
-              @name="user"
-             >Usuario
-             </Inputform>
-
-            <Inputform
-            @placeholder=" contraseña"
-            @type="password"
-            @name="password"
-            >Contraseña
-            </Inputform>
-
-
-
-
-
-
-
-
-                {{!--BOTTON --}}
-                <button  type="button" onclick={{this.onHandleClick}}>
-                Regitrate
-                </button>
-
-                {{!-- HAS OLVIDADO LA CONTRASEÑA?--}}
-                <p style="
-                    font-family: system-ui;
-                    font-size: small;
-                    width: 70%;
-                    margin-top: 5px;
-                ">
-                ¿Ya tienes cuenta?
-                <a href=""
-                style="
-                    color: green;
-                    font-style: italic;">
-                    Inicia sesion
-                </a>
-                </p>
-
-            </form>
-
-
-        </div>
-    </div>
-
-</body>
+</Loginform>
