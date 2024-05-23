@@ -3,7 +3,6 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { service } from '@ember/service';
 
-
 export default class LoginController extends Controller {
   USER_CREDENTIALS = 'user_credential';
 
@@ -28,6 +27,4 @@ export default class LoginController extends Controller {
       window.alert(`las credenciales de ${credential.user} no son correctas`);
     }
   }
-
-
 }

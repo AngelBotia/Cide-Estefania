@@ -16,7 +16,6 @@ export default class RegistreController extends Controller {
 
   @action
   onHandleClick(event) {
-
     const form = document.getElementById('registerForm');
 
     if (!form) return;

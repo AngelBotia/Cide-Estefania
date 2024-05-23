@@ -7,8 +7,6 @@
 }
 
 button {
-  height: 40px;
-  width: 200px;
   border-radius: 10px;
   border-color: transparent;
   background-color: green;
@@ -26,6 +24,7 @@ input {
   background-color: lightgray;
   border-color: transparent;
   margin-bottom: 25px;
+  color: gray;
 }
 
 body {

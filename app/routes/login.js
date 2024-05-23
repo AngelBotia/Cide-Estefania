@@ -5,6 +5,7 @@ import { service } from '@ember/service';
 export default class LoginRoute extends Route {
   @service login;
   @service router;
+  
   beforeModel() {
     const credential = JSON.parse(localStorage.getItem('user_credential'));
 

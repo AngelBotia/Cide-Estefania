@@ -8,7 +8,6 @@ export default class LoginService extends Service {
   USER_STORAGE = 'Login';
 
   @service router;
-  @service login;
 
   @action
   authUser(credential) {
@@ -37,4 +36,6 @@ export default class LoginService extends Service {
     localStorage.setItem('user_credential', jsonVoidObject);
     this.router.transitionTo('/login');
   }
+
+  
 }
