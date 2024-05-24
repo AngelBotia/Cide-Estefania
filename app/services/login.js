@@ -2,11 +2,9 @@ import Service from '@ember/service';
 import { service } from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
+import Constants from '../helpers/Constants';
 
 export default class LoginService extends Service {
-  USER_CREDENTIALS = 'user_credential';
-  USER_STORAGE = 'Login';
-
   @service router;
 
   @action
@@ -15,7 +13,7 @@ export default class LoginService extends Service {
     const { user, password } = credential;
 
     const currentLocalStorageObject = JSON.parse(
-      localStorage.getItem(this.USER_STORAGE),
+      localStorage.getItem(Constants.USER_STORAGE),
     );
 
     if (!currentLocalStorageObject) {
@@ -33,9 +31,7 @@ export default class LoginService extends Service {
   @action
   logOut(event) {
     const jsonVoidObject = JSON.stringify({});
-    localStorage.setItem('user_credential', jsonVoidObject);
+    localStorage.setItem(Constants.USER_CREDENTIALS, jsonVoidObject);
     this.router.transitionTo('/login');
   }
-
-  
 }

@@ -1,9 +1,11 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember/service';
+import Constants from '../helpers/Constants';
 
 export default class EstudiantesRoute extends Route {
   @service router;
   @service login;
+  @service estudiantes;
 
   beforeModel() {
     const credential = JSON.parse(localStorage.getItem('user_credential'));
@@ -13,5 +15,7 @@ export default class EstudiantesRoute extends Route {
     } else {
       this.router.transitionTo('/login');
     }
+
+    if (!localStorage.getItem(Constants.STUDENTS)) { this.estudiantes.initStudentLocalStorage();}
   }
 }

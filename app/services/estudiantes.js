@@ -1,8 +1,16 @@
 import Service from '@ember/service';
-import { tracked } from '@glimmer/tracking';
+import Constants from '../helpers/Constants';
 
 export default class EstudiantesService extends Service {
 
-    @tracked studentsList;
     
+    
+    
+    
+    
+    initStudentLocalStorage(){
+        const jsonVoidArray=JSON.stringify([]);
+        localStorage.setItem(Constants.STUDENTS,jsonVoidArray);
+    
+    }
 }

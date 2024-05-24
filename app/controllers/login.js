@@ -2,10 +2,9 @@ import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 import { service } from '@ember/service';
+import Constants from '../helpers/Constants';
 
 export default class LoginController extends Controller {
-  USER_CREDENTIALS = 'user_credential';
-
   @tracked user = false;
   @service login;
 
@@ -21,7 +20,7 @@ export default class LoginController extends Controller {
 
     if (this.login.authUser(credential)) {
       const crendentialJSON = JSON.stringify(credential);
-      localStorage.setItem(this.USER_CREDENTIALS, crendentialJSON);
+      localStorage.setItem(Constants.USER_CREDENTIALS, crendentialJSON);
       this.router.transitionTo('/');
     } else {
       window.alert(`las credenciales de ${credential.user} no son correctas`);

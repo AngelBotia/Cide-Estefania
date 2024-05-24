@@ -4,8 +4,6 @@ import { action } from '@ember/object';
 import { service } from '@ember/service';
 
 export default class ComandasController extends Controller {
-  USER_CREDENTIALS = 'user_credential';
-
   @tracked user = false;
   @service login;
 
