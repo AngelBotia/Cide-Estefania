@@ -6,6 +6,10 @@
   font-family: system-ui;
 }
 
+.move:hover{
+  transform: translateY(-3px);
+  transition: transform 0.3s ease; 
+}
 button {
   border-radius: 10px;
   border-color: transparent;
