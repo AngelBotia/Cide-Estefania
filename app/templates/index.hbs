@@ -1,7 +1,10 @@
 {{page-title "Cide"}}
 
 
-<Layout @logOut={{this.logOut}}>
+<Layout 
+@logOut={{this.login.logOut}}
+@user={{this.login.userType}}
+>
   <h1 style="text-align: left;padding: 10px;font-size: xxx-large;">Principal</h1>
 
 </Layout>

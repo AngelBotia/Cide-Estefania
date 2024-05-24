@@ -1,9 +1,11 @@
 import Route from '@ember/routing/route';
 import { service } from '@ember/service';
+import { tracked } from '@glimmer/tracking';
 
 export default class IndexRoute extends Route {
   @service router;
   @service login;
+  
 
   async beforeModel() {
     const credential = JSON.parse(localStorage.getItem('user_credential'));

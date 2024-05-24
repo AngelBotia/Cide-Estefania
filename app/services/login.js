@@ -6,6 +6,9 @@ import Constants from '../helpers/Constants';
 
 export default class LoginService extends Service {
   @service router;
+  @service login;
+  @tracked userType;
+
 
   @action
   authUser(credential) {
@@ -23,6 +26,9 @@ export default class LoginService extends Service {
 
     return currentLocalStorageObject.find((item) => {
       if (item.user == user && item.password == password) {
+        this.userType=item.userType;
+        
+        if(item.user=="admin"){this.userType="Administrador"}
         return true;
       }
     });

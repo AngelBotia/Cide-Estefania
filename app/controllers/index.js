@@ -6,8 +6,5 @@ export default class IndexController extends Controller {
   @service router;
   @service login;
 
-  @action
-  logOut(event) {
-    this.login.logOut();
-  }
+
 }

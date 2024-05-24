@@ -73,6 +73,7 @@ export default class RegistreController extends Controller {
       user: user,
       password: password,
       email: email,
+      userType: "Usuario"
     };
 
     if (!currentLocalStorage) {
