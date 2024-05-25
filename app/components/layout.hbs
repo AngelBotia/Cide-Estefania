@@ -59,11 +59,32 @@
 
 
     <aside class="sidebar" >
+    {{#if (eq @route 'Principal')}}
+        <div class="route move green" ><div>🎛️</div><a style="color: white;" href="/">Principal</a></div>
+    {{else}}
+            <div class="route move" ><div>🎛️</div><a style="color: grey;" href="/">Principal</a></div>
+    {{/if}}
 
-        <div class="route move" style=" background-color: darkgreen; color:white"><div>🎛️</div><a style="color: white;" href="/">Principal</a></div>
-        <div class="route move"><div>📖</div><a href="/comandas">Comandas</a></div>
-        <div class="route move"><div>📆</div><a href="/facturacion">Facturacion</a></div>
-        <div class="route move"><div>🙎‍♂️</div><a href="/estudiantes">Estudiantes</a></div>
+    {{#if (eq @route 'Comandas')}}
+        <div class="route move green"><div>📖</div><a style="color: white;" href="/comandas">Comandas</a></div>
+    {{else}}
+        <div class="route move"><div>📖</div><a style="color: grey;" href="/comandas">Comandas</a></div>
+    {{/if}}
+
+      {{#if (eq @route 'Facturacion')}}
+        <div class="route move green"><div>📆</div><a style="color: white;" href="/facturacion">Facturacion</a></div>
+    {{else}}
+        <div class="route move"><div>📆</div><a style="color: grey;" href="/facturacion">Facturacion</a></div>
+    {{/if}}
+
+
+         {{#if (eq @route 'Estudiantes')}}
+        <div class="route move green"><div>🙎‍♂️</div><a style="color: white;" href="/estudiantes">Estudiantes</a></div>
+    {{else}}
+        <div class="route move"><div>🙎‍♂️</div><a style="color: grey;" href="/estudiantes">Estudiantes</a></div>
+    {{/if}}
+
+
     </aside>
 
 

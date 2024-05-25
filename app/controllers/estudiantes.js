@@ -31,7 +31,6 @@ export default class EstudiantesController extends Controller {
   }
 
   getStudentForm(){
-    
     const form = document.getElementById("Form-Usuarios");
     const userAccount = JSON.parse(localStorage.getItem(Constants.USER_CREDENTIALS)).user;
     const studentForm = {

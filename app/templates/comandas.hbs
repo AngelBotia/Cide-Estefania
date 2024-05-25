@@ -2,8 +2,10 @@
 <Layout 
 @logOut={{this.logOut}} 
 @user={{this.login.userType}}
+@route="Comandas"
 >
 <h1  style=" text-align: left; padding: 10px;font-size: xxx-large;">Comandas</h1>
+{{#if (eq this.login.userType 'Usuario')}}
 <form id="formComandas" style="display: flex; flex-direction: column; align-items: center;">
 <Producto @name="">Comedor 8,5€</Producto>
 <Producto @name="">Comedor 8,5€</Producto>
@@ -14,4 +16,10 @@
 </form>
 <Button @margin-left={{46}}
 >Realizar comanda</Button>
+{{else}}
+<Tabla
+@elements={{this.estudiantes.studenlist}}></Tabla>
+
+
+{{/if}}
 </Layout>
