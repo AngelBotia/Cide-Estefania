@@ -69,6 +69,11 @@ export default class EstudiantesController extends Controller {
       form.tel_contacto.value = "";
   }
 
+  @action
+  onChangeFilter(event){
+    this.estudiantes.filterStudentList(event.target.value.toLowerCase());
+  }
+
 
 
  
