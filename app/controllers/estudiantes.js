@@ -18,8 +18,12 @@ export default class EstudiantesController extends Controller {
     event.preventDefault();
     const studentForm = this.getStudentForm();
     const currentLocalStorage= JSON.parse(localStorage.getItem(Constants.STUDENTS))
-    console.log(studentForm)
 
+    if(this.studenExist(studentForm)){
+      console.log("ese estudiante ya existe papa")
+      // TODO: show modal
+        return;
+    }
     //validar si esta
     currentLocalStorage.push(studentForm);
     localStorage.setItem(Constants.STUDENTS,JSON.stringify(currentLocalStorage));
@@ -45,6 +49,10 @@ export default class EstudiantesController extends Controller {
       status: Constants.status.P
     }
     return studentForm
+  }
+  studenExist(studentForm){
+    const currentLocalStorage= JSON.parse(localStorage.getItem(Constants.STUDENTS))
+    return currentLocalStorage.find((item)=>item.dni==studentForm.dni);
   }
 
 
