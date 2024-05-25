@@ -12,6 +12,7 @@ export default class LoginController extends Controller {
 
   @action
   onHandleClick(event) {
+    event.preventDefault();
     const form = document.getElementById('loginForm');
     const credential = {
       user: form.user.value,

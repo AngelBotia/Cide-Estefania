@@ -20,7 +20,8 @@ export default class EstudiantesController extends Controller {
     const currentLocalStorage= JSON.parse(localStorage.getItem(Constants.STUDENTS))
 
     if(this.studenExist(studentForm)){
-      console.log("ese estudiante ya existe papa")
+      let errorMesage = "❌ ese estudiante ya existe papa (DNI)";
+      window.alert(errorMesage)
       // TODO: show modal
         return;
     }

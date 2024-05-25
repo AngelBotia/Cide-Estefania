@@ -16,6 +16,7 @@ export default class RegistreController extends Controller {
 
   @action
   onHandleClick(event) {
+    event.preventDefault();
     const form = document.getElementById('registerForm');
 
     if (!form) return;
@@ -30,13 +31,15 @@ export default class RegistreController extends Controller {
     //si la contraseñas no son iguales
     if (!this.passwordIsEqual()) {
       this.errorMessage = 'La contraseña deben coincidir ❌';
+      window.alert(this.errorMessage)
       this.showSuccesModal(event, false);
       return;
     }
     //el email no este ya en la base de datos
     if (this.emailOrUserIsExist()) {
       this.errorMessage = 'Ese email esta en uso ❌';
-      this.showSuccesModal(event, false);
+      window.alert(this.errorMessage)
+      // this.showSuccesModal(event, false);
       return;
     }
 
