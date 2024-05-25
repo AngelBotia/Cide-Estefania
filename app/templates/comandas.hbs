@@ -5,21 +5,15 @@
 @route="Comandas"
 >
 <h1  style=" text-align: left; padding: 10px;font-size: xxx-large;">Comandas</h1>
-{{#if (eq this.login.userType 'Usuario')}}
 <form id="formComandas" style="display: flex; flex-direction: column; align-items: center;">
 <Producto @name="comedor">Comedor 8,5€</Producto>
 <Producto @name="camiseta">Camiseta 20€</Producto>
 <Producto @name="pantalones">Pantalones 25€</Producto>
-<Producto @name="">Calcetines de deporte 25€</Producto>
-<Producto @name="">Chaqueta 25€</Producto>
-<Producto @name="">Babero 15€</Producto>
+<Producto @name="calcetines">Calcetines de deporte 25€</Producto>
+<Producto @name="chaqueta">Chaqueta 25€</Producto>
+<Producto @name="babero">Babero 15€</Producto>
 </form>
-<Button @margin-left={{46}}
->Realizar comanda</Button>
-{{else}}
-<Tabla
-@elements={{this.estudiantes.studenlist}}></Tabla>
+<button onclick={{this.onSubmitForm}}  style="margin-left: 46rem; padding: 0.5rem;" type="button"
+>Realizar comanda</button>
 
-
-{{/if}}
 </Layout>

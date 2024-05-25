@@ -10,7 +10,6 @@ export default class LoginService extends Service {
   @tracked userType;
   @tracked dateNow;
 
-
   @action
   authUser(credential) {
     if (!credential) return false;
@@ -27,9 +26,11 @@ export default class LoginService extends Service {
 
     return currentLocalStorageObject.find((item) => {
       if (item.user == user && item.password == password) {
-        this.userType=item.userType;
-        
-        if(item.user=="admin"){this.userType="Administrador"}
+        this.userType = item.userType;
+
+        if (item.user == 'admin') {
+          this.userType = 'Administrador';
+        }
         return true;
       }
     });

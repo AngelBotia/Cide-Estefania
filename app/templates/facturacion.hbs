@@ -6,5 +6,11 @@
 
   >
     <h1 style="text-align: left;padding: 10px; font-size: xxx-large;">Facturacion</h1>
-    <Tabla></Tabla>
+    <Tabla
+    @elements={{this.comandas.comandasList}}
+    @route='Facturacion'
+    @userType={{this.login.userType}}
+    ></Tabla>
+
+
 </Layout>

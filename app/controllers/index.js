@@ -5,6 +5,4 @@ import { action } from '@ember/object';
 export default class IndexController extends Controller {
   @service router;
   @service login;
-
-
 }

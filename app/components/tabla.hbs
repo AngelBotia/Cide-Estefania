@@ -9,7 +9,9 @@
     table-layout: fixed;
     border-collapse: collapse;
     ">
-        <thead>
+                {{!-- ESTUDIANTES --}}
+                {{#if (eq @route 'Estudiantes')}}
+            <thead> 
                 <tr>
                     <th>Nombre</th>
                     <th>Apellidos</th>
@@ -34,7 +36,45 @@
                     <td>{{element.telContacto}}</td>
                 </tr>
                 {{/each}}
-
-            
             </tbody>
+                {{/if}}
+                    
+                    {{!-- COMANDAS --}}
+               {{#if (eq @route 'Facturacion')}}
+            <thead> 
+                <tr>
+                    <th>N.Factura</th>
+                    <th>Nombre</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    {{#if (eq @userType 'Usuario')}}
+                    <th>👁️</th>
+                    {{else}}
+                    <th>📖</th>
+                     {{/if}}
+                
+                </tr>
+            </thead>
+            <tbody>
+                {{#each @elements as | element|}}
+                <tr>
+                    <td>{{element.codigoFactura}}</td>
+                    <td>{{element.user}}</td>
+                    <td>{{element.fecha}}</td>
+                    <td>{{element.status}}</td>
+                    {{#if (eq @userType 'Usuario')}}
+                    <td>🔍</td>
+                    {{else}}
+                    <td>🟢</td>
+                     {{/if}}
+                </tr>
+                {{/each}}
+            </tbody>
+                {{/if}}
+
+
+
+
+
+
         </table> 

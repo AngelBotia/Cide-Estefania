@@ -6,9 +6,9 @@
   font-family: system-ui;
 }
 
-.move:hover{
+.move:hover {
   transform: translateY(-3px);
-  transition: transform 0.3s ease; 
+  transition: transform 0.3s ease;
 }
 button {
   border-radius: 10px;
@@ -48,7 +48,7 @@ body {
   background-color: white;
 }
 
-.green{
+.green {
   background-color: green;
 }
 
@@ -76,10 +76,9 @@ th {
   border-right: none;
   overflow: hidden;
 }
-tr:last-child td{
+tr:last-child td {
   border-bottom: none;
-} 
-
+}
 
 table {
   border-collapse: collapse;

@@ -31,14 +31,14 @@ export default class RegistreController extends Controller {
     //si la contraseñas no son iguales
     if (!this.passwordIsEqual()) {
       this.errorMessage = 'La contraseña deben coincidir ❌';
-      window.alert(this.errorMessage)
+      window.alert(this.errorMessage);
       this.showSuccesModal(event, false);
       return;
     }
     //el email no este ya en la base de datos
     if (this.emailOrUserIsExist()) {
       this.errorMessage = 'Ese email esta en uso ❌';
-      window.alert(this.errorMessage)
+      window.alert(this.errorMessage);
       // this.showSuccesModal(event, false);
       return;
     }
@@ -76,7 +76,7 @@ export default class RegistreController extends Controller {
       user: user,
       password: password,
       email: email,
-      userType: "Usuario"
+      userType: 'Usuario',
     };
 
     if (!currentLocalStorage) {

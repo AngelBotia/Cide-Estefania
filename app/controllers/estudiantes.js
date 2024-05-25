@@ -14,26 +14,33 @@ export default class EstudiantesController extends Controller {
   }
 
   @action
-  onSubmitForm(event){
+  onSubmitForm(event) {
     event.preventDefault();
     const studentForm = this.getStudentForm();
-    const currentLocalStorage= JSON.parse(localStorage.getItem(Constants.STUDENTS))
+    const currentLocalStorage = JSON.parse(
+      localStorage.getItem(Constants.STUDENTS),
+    );
 
-    if(this.studenExist(studentForm)){
-      let errorMesage = "❌ ese estudiante ya existe papa (DNI)";
-      window.alert(errorMesage)
+    if (this.studenExist(studentForm)) {
+      let errorMesage = '❌ ese estudiante ya existe papa (DNI)';
+      window.alert(errorMesage);
       // TODO: show modal
-        return;
+      return;
     }
     //validar si esta
     currentLocalStorage.push(studentForm);
-    localStorage.setItem(Constants.STUDENTS,JSON.stringify(currentLocalStorage));
+    localStorage.setItem(
+      Constants.STUDENTS,
+      JSON.stringify(currentLocalStorage),
+    );
     this.cleanFrom();
   }
 
-  getStudentForm(){
-    const form = document.getElementById("Form-Usuarios");
-    const userAccount = JSON.parse(localStorage.getItem(Constants.USER_CREDENTIALS)).user;
+  getStudentForm() {
+    const form = document.getElementById('Form-Usuarios');
+    const userAccount = JSON.parse(
+      localStorage.getItem(Constants.USER_CREDENTIALS),
+    ).user;
     const studentForm = {
       name: form.name.value,
       apellidos: form.apellido.value,
@@ -43,39 +50,37 @@ export default class EstudiantesController extends Controller {
       familiaNumerosa: form.familiaNum.checked,
       dni: form.dni.value,
       telefono: form.telefono.value,
-      dniContacto:form.dni_contacto.value,
+      dniContacto: form.dni_contacto.value,
       email: form.email.value,
       telContacto: form.tel_contacto.value,
       userAccount: userAccount,
-      status: Constants.status.P
-    }
-    return studentForm
+      status: Constants.status.P,
+    };
+    return studentForm;
   }
-  studenExist(studentForm){
-    const currentLocalStorage= JSON.parse(localStorage.getItem(Constants.STUDENTS))
-    return currentLocalStorage.find((item)=>item.dni==studentForm.dni);
+  studenExist(studentForm) {
+    const currentLocalStorage = JSON.parse(
+      localStorage.getItem(Constants.STUDENTS),
+    );
+    return currentLocalStorage.find((item) => item.dni == studentForm.dni);
   }
-  cleanFrom(){
-    const form = document.getElementById("Form-Usuarios");
-      form.name.value = "";
-      form.apellido.value="";
-      form.curso.value="";
-      form.direccion.value="";
-      form.fecha_nacimiento.value="";
-      form.familiaNum.checked="";
-      form.dni.value="";
-      form.telefono.value="";
-      form.dni_contacto.value="";
-      form.email.value="";
-      form.tel_contacto.value = "";
+  cleanFrom() {
+    const form = document.getElementById('Form-Usuarios');
+    form.name.value = '';
+    form.apellido.value = '';
+    form.curso.value = '';
+    form.direccion.value = '';
+    form.fecha_nacimiento.value = '';
+    form.familiaNum.checked = '';
+    form.dni.value = '';
+    form.telefono.value = '';
+    form.dni_contacto.value = '';
+    form.email.value = '';
+    form.tel_contacto.value = '';
   }
 
   @action
-  onChangeFilter(event){
+  onChangeFilter(event) {
     this.estudiantes.filterStudentList(event.target.value.toLowerCase());
   }
-
-
-
- 
 }

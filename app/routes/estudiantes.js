@@ -11,12 +11,16 @@ export default class EstudiantesRoute extends Route {
     const credential = JSON.parse(localStorage.getItem('user_credential'));
 
     if (this.login.authUser(credential)) {
-      this.estudiantes.studenlist= JSON.parse(localStorage.getItem(Constants.STUDENTS));
+      this.estudiantes.studenlist = JSON.parse(
+        localStorage.getItem(Constants.STUDENTS),
+      );
     } else {
       this.router.transitionTo('/login');
     }
-    
-    if (!localStorage.getItem(Constants.STUDENTS)) { this.estudiantes.initStudentLocalStorage();}
-    this.login.dateNow=new Date().toISOString().split("T")[0];
+
+    if (!localStorage.getItem(Constants.STUDENTS)) {
+      this.estudiantes.initStudentLocalStorage();
+    }
+    this.login.dateNow = new Date().toISOString().split('T')[0];
   }
 }
