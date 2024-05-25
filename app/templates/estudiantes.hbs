@@ -6,11 +6,16 @@
     <h1  style=" text-align: left; padding: 10px;font-size: xxx-large;">Estudiantes</h1>
    {{!-- TODO: si es user vera el Formulario usuario
         Admin: Tabla buscar ususario (Acuerdate del inpit) --}}
+{{#if (eq this.login.userType 'Usuario')}}
    <Formulariousuario
    @onClick={{this.onSubmitForm}}
    @onSubmitForm={{this.onSubmitForm}}
    @dateNow={{this.login.dateNow}}
    >
-
    </Formulariousuario>
+{{else}}
+<Tabla
+@elements={{this.estudiantes.studenlist}}></Tabla>
+
+{{/if}}
 </Layout>

@@ -11,6 +11,7 @@ export default class EstudiantesRoute extends Route {
     const credential = JSON.parse(localStorage.getItem('user_credential'));
 
     if (this.login.authUser(credential)) {
+      this.estudiantes.studenlist= JSON.parse(localStorage.getItem(Constants.STUDENTS));
     } else {
       this.router.transitionTo('/login');
     }

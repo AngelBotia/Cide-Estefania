@@ -27,6 +27,7 @@ export default class EstudiantesController extends Controller {
     //validar si esta
     currentLocalStorage.push(studentForm);
     localStorage.setItem(Constants.STUDENTS,JSON.stringify(currentLocalStorage));
+    this.cleanFrom();
   }
 
   getStudentForm(){
@@ -53,6 +54,20 @@ export default class EstudiantesController extends Controller {
   studenExist(studentForm){
     const currentLocalStorage= JSON.parse(localStorage.getItem(Constants.STUDENTS))
     return currentLocalStorage.find((item)=>item.dni==studentForm.dni);
+  }
+  cleanFrom(){
+    const form = document.getElementById("Form-Usuarios");
+      form.name.value = "";
+      form.apellido.value="";
+      form.curso.value="";
+      form.direccion.value="";
+      form.fecha_nacimiento.value="";
+      form.familiaNum.checked="";
+      form.dni.value="";
+      form.telefono.value="";
+      form.dni_contacto.value="";
+      form.email.value="";
+      form.tel_contacto.value = "";
   }
 
 

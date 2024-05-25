@@ -1,13 +1,15 @@
 {{yield}}
 <table class="table" 
         style="
-            height: 80%;
-            width: 90%;
-            text-align: center;
-            background-color: white;
-            font-family: system-ui;
-        
-            ">
+    height: 80%;
+    width: 100%;
+    text-align: center;
+    background-color: white;
+    font-family: system-ui;
+    table-layout: fixed;
+    border-collapse: collapse;
+    overflow: hidden;  
+    ">
         <thead>
                 <tr>
                     <th>Nombre</th>
@@ -21,35 +23,19 @@
                 </tr>
             </thead>
             <tbody>
+                {{#each @elements as | element|}}
                 <tr>
-                    <td>Nombre1</td>
-                    <td>Apellidos1</td>
-                    <td>Dirección1</td>
-                    <td>Fecha1</td>
-                    <td>45454545S</td>
-                    <td>Contacto1</td>
-                    <td>DNIContacto1</td>
-                    <td>TeléfonoContacto1</td>
+                    <td>{{element.name}}</td>
+                    <td>{{element.apellidos}}</td>
+                    <td>{{element.direccion}}</td>
+                    <td>{{element.fechaNacimiento}}</td>
+                    <td>{{element.dni}}</td>
+                    <td>{{element.telefono}}</td>
+                    <td>{{element.dniContacto}}</td>
+                    <td>{{element.telContacto}}</td>
                 </tr>
-                 <tr>
-                    <td>Nombre1</td>
-                    <td>Apellidos1</td>
-                    <td>Dirección1</td>
-                    <td>Fecha1</td>
-                    <td>45454545S</td>
-                    <td>Contacto1</td>
-                    <td>DNIContacto1</td>
-                    <td>TeléfonoContacto1</td>
-                </tr>
-                  <tr>
-                    <td>Nombre1</td>
-                    <td>Apellidos1</td>
-                    <td>Dirección1</td>
-                    <td>Fecha1</td>
-                    <td>45454545S</td>
-                    <td>Contacto1</td>
-                    <td>DNIContacto1</td>
-                    <td>TeléfonoContacto1</td>
-                </tr>
+                {{/each}}
+
+            
             </tbody>
         </table> 
