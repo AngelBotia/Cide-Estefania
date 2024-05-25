@@ -1,6 +1,6 @@
 {{page-title "Estudiantes"}}
 <Layout 
-@logOut={{this.logOut}} 
+@logOut={{this.login.logOut}} 
 @user={{this.login.userType}}
 >
     <h1  style=" text-align: left; padding: 10px;font-size: xxx-large;">Estudiantes</h1>
@@ -8,6 +8,8 @@
         Admin: Tabla buscar ususario (Acuerdate del inpit) --}}
    <Formulariousuario
    @onClick={{this.onSubmitForm}}
+   @onSubmitForm={{this.onSubmitForm}}
+   @dateNow={{this.login.dateNow}}
    >
 
    </Formulariousuario>

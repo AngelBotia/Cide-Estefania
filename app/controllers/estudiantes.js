@@ -15,9 +15,39 @@ export default class EstudiantesController extends Controller {
 
   @action
   onSubmitForm(event){
-    const form = document.getElementById("Form-Usuarios");
-    localStorage.setItem(Constants.STUDENTS,[]);
+    event.preventDefault();
+    const studentForm = this.getStudentForm();
+    const currentLocalStorage= JSON.parse(localStorage.getItem(Constants.STUDENTS))
+    console.log(studentForm)
+
+    //validar si esta
+    currentLocalStorage.push(studentForm);
+    localStorage.setItem(Constants.STUDENTS,JSON.stringify(currentLocalStorage));
   }
+
+  getStudentForm(){
+    
+    const form = document.getElementById("Form-Usuarios");
+    const userAccount = JSON.parse(localStorage.getItem(Constants.USER_CREDENTIALS)).user;
+    const studentForm = {
+      name: form.name.value,
+      apellidos: form.apellido.value,
+      curso: form.curso.value,
+      direccion: form.direccion.value,
+      fechaNacimiento: form.fecha_nacimiento.value,
+      familiaNumerosa: form.familiaNum.checked,
+      dni: form.dni.value,
+      telefono: form.telefono.value,
+      dniContacto:form.dni_contacto.value,
+      email: form.email.value,
+      telContacto: form.tel_contacto.value,
+      userAccount: userAccount,
+      status: Constants.status.P
+    }
+    return studentForm
+  }
+
+
 
  
 }

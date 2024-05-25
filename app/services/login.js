@@ -8,6 +8,7 @@ export default class LoginService extends Service {
   @service router;
   @service login;
   @tracked userType;
+  @tracked dateNow;
 
 
   @action

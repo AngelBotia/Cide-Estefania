@@ -1,6 +1,6 @@
 {{yield}}
 
-<form id="Form-Usuarios" style="
+<form id="Form-Usuarios" onsubmit={{@onSubmitForm}} style="
         width: 100%;
         height: 80%;
         display: flex;
@@ -40,6 +40,7 @@ padding:1.5vw 3.5vw 0vw 2.0vw;
 @placeholder=" fecha de nacimiento"
 @name="fecha_nacimiento"
 @type="date"
+@min={{@dateNow}}
 >
 Fecha de nacimiento
 </Inputform>
@@ -56,7 +57,7 @@ color:gray">
     </p>
 
 <label class="switch">
-    <input type="checkbox">
+    <input type="checkbox" value="si son" name="familiaNum" >
     <span class="slider round"></span>
 </label>
    
@@ -104,6 +105,6 @@ color:gray">
 
 
 
-<button class="move" style="margin-left: 7rem;padding: 0.4rem;" onclick={{@onClick}} type="button">Crear estudiante</button>
+<button class="move" style="margin-left: 7rem;padding: 0.4rem;" onsubmit={{@onClick}} type="submit">Crear estudiante</button>
 </div>
 </form> 

@@ -12,6 +12,7 @@ export default class IndexRoute extends Route {
 
     if (this.login.authUser(credential)) {
       this.router.transitionTo('/');
+
     } else {
       this.router.transitionTo('/login');
     }
