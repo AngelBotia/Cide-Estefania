@@ -99,64 +99,11 @@
 
 
 
-            {{!-- INVOICE --}}
-              <dialog id="factura" style="
-                      margin: auto;
-                      width: 80%;
-                      height: 90%;
-                      ">
-                <h1 style="font-size: 4em; font-style: italic; padding: 1vw;">Axis Data </h1>
-                <div class="info factura">
+          <Invoice
+          @invoiceData={{@invoiceData}}
+          >
 
-                  <div class="datos factura">
-                    <p>Direccion:</p>
-                    <p>Ciudad y pais:</p>
-                    <p>CIF/NIF:</p>
-                    <p>Telofono:</p>
-                    <p>Mail:</p>
-                  </div>
-                  <div class="datos factura derecha">
-                    <p>Fecha emision:</p>
-                    <p>Numero de factura: {{this.invoiceData.booking_id}}</p>
-                  </div>
-
-                </div>
-
-                <table class="tableDialog">
-                  <tr>
-                    <th>Booking id</th>
-                    <th>Hotel id</th>
-                    <th>Booking Date</th>
-                    <th>Description</th>
-                    <th>PAX</th>
-                  </tr>
-                  <tr>
-                    <td>{{this.invoiceData.booking_id}}</td>
-                    <td>{{this.invoiceData.hotelId}}</td>
-                    <td>{{this.invoiceData.bookingDate}}</td>
-                    <td>{{this.invoiceData.description}}</td>
-                    <td>{{this.invoiceData.pax}}</td>
-                  </tr>
-                </table>
-
-
-                <div class="facturaTotal">
-
-                  <div class="divTotalFactura">
-                    <h2>Total: </h2>
-                  </div>
-
-                  <div class="divTotalFactura">
-                    <h2>350€</h2>
-                  </div>
-                </div>
-
-                <hr />
-
-                <div style="text-align: center;" class="footerFactura">
-                  <h1>Gracias por su confianza</h1>
-                </div>
-              </dialog>
+          </Invoice>
 
 
         </table>

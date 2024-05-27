@@ -15,58 +15,64 @@ export default class ComandasController extends Controller {
     this.login.logOut();
   }
   @action
-  onSubmitForm(event){
+  onSubmitForm(event) {
     event.preventDefault();
-    const form = document.getElementById("formComandas");
+    const form = document.getElementById('formComandas');
     const formData = this.getObjectForm(form);
-    const currentLocalStorage = JSON.parse(localStorage.getItem(Constants.COMANDAS_STORAGE))
+    const currentLocalStorage = JSON.parse(
+      localStorage.getItem(Constants.COMANDAS_STORAGE),
+    );
     currentLocalStorage.push(formData);
-    localStorage.setItem(Constants.COMANDAS_STORAGE,JSON.stringify(currentLocalStorage))
+    localStorage.setItem(
+      Constants.COMANDAS_STORAGE,
+      JSON.stringify(currentLocalStorage),
+    );
     this.cleanForm(form);
-    window.alert("✅ La comanda se ha realizado con exito ")
+    window.alert('✅ La comanda se ha realizado con exito ');
   }
-  getObjectForm(form){
-    const user = JSON.parse(localStorage.getItem(Constants.USER_CREDENTIALS)).user;
+  getObjectForm(form) {
+    const user = JSON.parse(
+      localStorage.getItem(Constants.USER_CREDENTIALS),
+    ).user;
     const formData = {
-      comedor:{
+      comedor: {
         price: 8.5,
-        cant: form.comedor.value
+        cant: form.comedor.value,
       },
-      camiseta:{
+      camiseta: {
         price: 20,
-        cant: form.camiseta.value
+        cant: form.camiseta.value,
       },
-      pantalones:{
+      pantalones: {
         price: 25,
-        cant: form.pantalones.value
+        cant: form.pantalones.value,
       },
-      calcetines:{
+      calcetines: {
         price: 25,
-        cant: form.calcetines.value
+        cant: form.calcetines.value,
       },
-      chaqueta:{
+      chaqueta: {
         price: 25,
-        cant: form.chaqueta.value
-      }, 
-      babero:{
+        cant: form.chaqueta.value,
+      },
+      babero: {
         price: 25,
-        cant: form.chaqueta.value
+        cant: form.chaqueta.value,
       },
       status: Constants.status.P,
-      user:user,
+      user: user,
       codigoFactura: Date.now(),
-      fecha: new Date().toISOString().split('T')[0]
-
-    }
+      fecha: new Date().toISOString().split('T')[0],
+    };
     return formData;
   }
 
-  cleanForm(form){
-    form.comedor.value=0;
-    form.camiseta.value=0;
-    form.pantalones.value=0;
-    form.calcetines.value=0;
-    form.chaqueta.value=0;
-    form.babero.value=0;
+  cleanForm(form) {
+    form.comedor.value = 0;
+    form.camiseta.value = 0;
+    form.pantalones.value = 0;
+    form.calcetines.value = 0;
+    form.chaqueta.value = 0;
+    form.babero.value = 0;
   }
 }

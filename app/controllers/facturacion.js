@@ -2,11 +2,14 @@ import Controller from '@ember/controller';
 import { service } from '@ember/service';
 import { action } from '@ember/object';
 import Constants from '../helpers/Constants';
+import { tracked } from '@glimmer/tracking';
 
 export default class FacturacionController extends Controller {
   @service router;
   @service login;
   @service comandas;
+
+  @tracked invoiceData;
 
   @action
   logOut(event) {
@@ -16,31 +19,45 @@ export default class FacturacionController extends Controller {
   @action
   onClickUserShowInvoice(event) {
     const invoice = document.getElementById('factura');
-    const fila = event.target.parentNode.parentNode.parentNode;
-    if (!fila) return;
-    // this.invoiceData = {
-    //   booking_id: fila.cells[0].innerHTML,
-    //   hotelId: fila.cells[1].innerHTML,
-    //   bookingDate: fila.cells[2].innerHTML,
-    //   description: fila.cells[3].innerHTML,
-    //   pax: fila.cells[4].innerHTML,
-    // };
+    const idElement =
+      event.target.parentNode.parentNode.firstElementChild.firstElementChild
+        .innerHTML;
+    if (!idElement) return;
+    const currentLocalStorageComanda = JSON.parse(
+      localStorage.getItem(Constants.COMANDAS_STORAGE),
+    );
+    const comandaToShow = currentLocalStorageComanda.find((item) => {
+      return item.codigoFactura == idElement;
+    });
+    debugger
+    this.invoiceData = {
+      numeroFactura: comandaToShow.codigoFactura.toString(),
+      fecha: comandaToShow.fecha,
+      user:comandaToShow.user
+    };
+
     invoice.showModal();
   }
   @action
   onChangeStatusAdmin(event) {
     const idElement =
-    event.target.parentNode.parentNode.firstElementChild.innerHTML;
+      event.target.parentNode.parentNode.firstElementChild.innerHTML;
 
-    if(!this.comandas.comandasList || !idElement){return;}
+    if (!this.comandas.comandasList || !idElement) {
+      return;
+    }
     const indexToEdit = this.comandas.comandasList.findIndex(
-    (item) => (item.codigoFactura == idElement)
-       );
+      (item) => item.codigoFactura == idElement,
+    );
     const comandasListToUpdate = this.comandas.comandasList;
     comandasListToUpdate[indexToEdit].status = event.currentTarget.value;
-    localStorage.setItem(Constants.COMANDAS_STORAGE,JSON.stringify(comandasListToUpdate));
+    localStorage.setItem(
+      Constants.COMANDAS_STORAGE,
+      JSON.stringify(comandasListToUpdate),
+    );
     this.comandas.updateComandasList(comandasListToUpdate);
     window.location.reload();
   }
-}
 
+  //TODO get elements of the students create by user.
+}

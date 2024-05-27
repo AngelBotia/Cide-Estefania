@@ -9,7 +9,8 @@ export default class ComandasRoute extends Route {
   beforeModel() {
     const credential = JSON.parse(localStorage.getItem('user_credential'));
     if (this.login.authUser(credential)) {
-      if(!localStorage.getItem(Constants.COMANDAS_STORAGE)) this.initComandaStorage();
+      if (!localStorage.getItem(Constants.COMANDAS_STORAGE))
+        this.initComandaStorage();
       this.comandas.initComandasList();
       this.router.transitionTo('/comandas');
     } else {
@@ -17,7 +18,7 @@ export default class ComandasRoute extends Route {
     }
   }
 
-  initComandaStorage(){
-    localStorage.setItem(Constants.COMANDAS_STORAGE,JSON.stringify([]));
+  initComandaStorage() {
+    localStorage.setItem(Constants.COMANDAS_STORAGE, JSON.stringify([]));
   }
 }

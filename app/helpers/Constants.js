@@ -7,5 +7,5 @@ export default {
     A: 'Aprobado',
     C: 'Cancelado',
   },
-  COMANDAS_STORAGE:"comandas_storage"
+  COMANDAS_STORAGE: 'comandas_storage',
 };

@@ -1,0 +1,59 @@
+{{yield}}
+  {{!-- INVOICE --}}
+  <dialog id="factura" style="
+                        margin: auto;
+                        width: 80%;
+                        height: 90%;
+                        ">
+    <h1 style="font-size: 4em; font-style: italic; padding: 1vw;">Axis Data </h1>
+    <div class="info factura">
+
+      <div class="datos factura">
+        <p>Direccion:</p>
+        <p>Ciudad y pais:</p>
+        <p>CIF/NIF:</p>
+        <p>Telofono:</p>
+        <p>Mail:</p>
+      </div>
+      <div class="datos factura derecha">
+        <p>Fecha emision:{{@invoiceData.fecha}} </p>
+        <p>Numero de factura: {{@invoiceData.numeroFactura}}</p>
+      </div>
+
+    </div>
+
+    <table class="tableDialog">
+      <tr>
+        <th>Usuario</th>
+        <th>Hotel id</th>
+        <th>Fecha</th>
+        <th>Description</th>
+        <th>PAX</th>
+      </tr>
+      <tr>
+        <td>{{@invoiceData.user}}</td>
+        <td>{{@invoiceData.hotelId}}</td>
+        <td>{{@invoiceData.bookingDate}}</td>
+        <td>{{@invoiceData.description}}</td>
+        <td>{{@invoiceData.pax}}</td>
+      </tr>
+    </table>
+
+
+    <div class="facturaTotal">
+
+      <div class="divTotalFactura">
+        <h2>Total: </h2>
+      </div>
+
+      <div class="divTotalFactura">
+        <h2>350€</h2>
+      </div>
+    </div>
+
+    <hr />
+
+    <div style="text-align: center;" class="footerFactura">
+      <h1>Gracias por su confianza</h1>
+    </div>
+  </dialog>

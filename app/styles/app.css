@@ -86,19 +86,17 @@ table {
   margin: 0;
 }
 
-
 .facturaTotal {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   background-color: lightgrey;
-
 }
 
 .divTotalFactura {
   padding-right: 1vw;
 }
-.select-status{
+.select-status {
   width: 4rem;
   height: 3rem;
   font-size: x-large;
