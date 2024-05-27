@@ -29,7 +29,6 @@ export default class FacturacionController extends Controller {
     const comandaToShow = currentLocalStorageComanda.find((item) => {
       return item.codigoFactura == idElement;
     });
-    debugger
     this.invoiceData = {
       numeroFactura: comandaToShow.codigoFactura.toString(),
       fecha: comandaToShow.fecha,
