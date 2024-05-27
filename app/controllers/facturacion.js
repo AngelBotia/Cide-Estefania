@@ -31,8 +31,9 @@ export default class FacturacionController extends Controller {
   onChangeStatusAdmin(event) {
     const idElement =
     event.target.parentNode.parentNode.firstElementChild.innerHTML;
+    debugger
     const indexToEdit = this.comandas.comandasList.findIndex(
-      (item) => (item.codigoFactura = idElement),
+      (item) => (item.codigoFactura == idElement)
     );
     const comandasListToUpdate = this.comandas.comandasList;
     comandasListToUpdate[indexToEdit].status = event.currentTarget.value;
