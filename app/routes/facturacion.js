@@ -21,6 +21,7 @@ export default class FacturacionRoute extends Route {
   getComandasByUserID() {
     const currentLocalComandast = JSON.parse(localStorage.getItem(Constants.COMANDAS_STORAGE));
     const userName = JSON.parse(localStorage.getItem(Constants.USER_CREDENTIALS)).user;
+    if(!currentLocalComandast) return;
     const comandasToUpdate = currentLocalComandast.filter(
       (item) => item.user == userName && item.status==Constants.status.A
     );

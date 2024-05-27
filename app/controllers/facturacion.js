@@ -31,10 +31,11 @@ export default class FacturacionController extends Controller {
   onChangeStatusAdmin(event) {
     const idElement =
     event.target.parentNode.parentNode.firstElementChild.innerHTML;
-    debugger
+
+    if(!this.comandas.comandasList || !idElement){return;}
     const indexToEdit = this.comandas.comandasList.findIndex(
-      (item) => (item.codigoFactura == idElement)
-    );
+    (item) => (item.codigoFactura == idElement)
+       );
     const comandasListToUpdate = this.comandas.comandasList;
     comandasListToUpdate[indexToEdit].status = event.currentTarget.value;
     localStorage.setItem(Constants.COMANDAS_STORAGE,JSON.stringify(comandasListToUpdate));
