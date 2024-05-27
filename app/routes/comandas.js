@@ -10,7 +10,7 @@ export default class ComandasRoute extends Route {
     const credential = JSON.parse(localStorage.getItem('user_credential'));
     if (this.login.authUser(credential)) {
       if(!localStorage.getItem(Constants.COMANDAS_STORAGE)) this.initComandaStorage();
-      this.comandas.updateComandasList();
+      this.comandas.initComandasList();
       this.router.transitionTo('/comandas');
     } else {
       this.router.transitionTo('/login');

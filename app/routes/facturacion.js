@@ -9,7 +9,7 @@ export default class FacturacionRoute extends Route {
     const credential = JSON.parse(localStorage.getItem('user_credential'));
 
     if (this.login.authUser(credential)) {
-      this.comandas.updateComandasList();
+      this.comandas.initComandasList();
       this.router.transitionTo('/facturacion');
     } else {
       this.router.transitionTo('/login');

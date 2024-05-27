@@ -37,7 +37,7 @@ export default class RegistreController extends Controller {
     }
     //el email no este ya en la base de datos
     if (this.emailOrUserIsExist()) {
-      this.errorMessage = 'Ese email esta en uso ❌';
+      this.errorMessage = 'Ese usuario esta en uso ❌';
       window.alert(this.errorMessage);
       // this.showSuccesModal(event, false);
       return;

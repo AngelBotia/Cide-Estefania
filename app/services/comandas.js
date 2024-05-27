@@ -8,7 +8,12 @@ export default class ComandasService extends Service {
     @tracked comandasList;
 
     @action
-    updateComandasList(){
+    initComandasList(){
         this.comandasList = JSON.parse(localStorage.getItem(Constants.COMANDAS_STORAGE));
-    }    
+    }
+
+    @action
+    updateComandasList(newComandas){
+      this.comandasList=newComandas;
+    }
 }
