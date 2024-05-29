@@ -37,9 +37,14 @@ export default class RegistreController extends Controller {
     }
     //el email no este ya en la base de datos
     if (this.emailOrUserIsExist()) {
-      this.errorMessage = 'Ese usuario esta en uso ❌';
+      this.errorMessage = 'Ese usuario o email esta en uso ❌';
       window.alert(this.errorMessage);
       // this.showSuccesModal(event, false);
+      return;
+    }
+    if(!this.formData.email.includes('@') || this.formData.email.includes('.') ){
+      this.errorMessage='El email no cumple el formato adecuado ❌ Recuerda que debe incluir @ ';
+      window.alert(this.errorMessage);
       return;
     }
 

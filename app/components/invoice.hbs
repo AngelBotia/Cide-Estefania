@@ -5,17 +5,11 @@
                         width: 80%;
                         height: 90%;
                         ">
-    <h1 style="font-size: 4em; font-style: italic; padding: 1vw;">Axis Data </h1>
+    <h1 style="font-size: 4em; font-style: italic; padding: 1vw;">C.I.D.E</h1>
     <div class="info factura">
 
-      <div class="datos factura">
-        <p>Direccion:</p>
-        <p>Ciudad y pais:</p>
-        <p>CIF/NIF:</p>
-        <p>Telofono:</p>
-        <p>Mail:</p>
-      </div>
-      <div class="datos factura derecha">
+  
+      <div class="datos">
         <p>Usuario: {{@invoiceData.user}}</p>
         <p>Fecha emision: {{@invoiceData.fecha}} </p>
         <p>Numero de factura: {{@invoiceData.numeroFactura}}</p>
@@ -25,21 +19,21 @@
 
     <table class="tableDialog">
       <tr>
-        <th>Usuario</th>
-        <th></th>
-        <th>Fecha</th>
-        <th>Description</th>
-        <th>PAX</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>TOTAL</th>
       </tr>
-   {{!-- {{#each @invoiceData.products as | product|}}
+   {{#each @invoiceData.products as | product|}}
       <tr>
       <td>{{product.nombre}}</td>
-
-
-      </tr> --}}
+      <td>{{product.price}}</td>
+      <td>{{product.cant}}</td>
+      <td>{{product.total}}</td>
+      </tr>
+  {{/each}}
     </table>
 
-  {{!-- {{/each}} --}}
     <div class="facturaTotal">
 
       <div class="divTotalFactura">
@@ -47,7 +41,7 @@
       </div>
 
       <div class="divTotalFactura">
-        <h2>350€</h2>
+        <h2>{{@invoiceData.total}}€</h2>
       </div>
     </div>
 

@@ -19,6 +19,7 @@ export default class ComandasController extends Controller {
     event.preventDefault();
     const form = document.getElementById('formComandas');
     const formData = this.getObjectForm(form);
+    if(this.submitEmpty(form)){window.alert('❌ No puedes mandas una comanda vacia'); return;}
     const currentLocalStorage = JSON.parse(
       localStorage.getItem(Constants.COMANDAS_STORAGE),
     );
@@ -80,6 +81,16 @@ export default class ComandasController extends Controller {
       fecha: new Date().toISOString().split('T')[0],
     };
     return formData;
+  }
+
+  submitEmpty(form){
+    if(    
+      form.comedor.value == 0 &&
+      form.camiseta.value == 0 &&
+      form.pantalones.value == 0 &&
+      form.calcetines.value == 0 &&
+      form.chaqueta.value == 0 &&
+      form.babero.value == 0 )return true;
   }
 
   cleanForm(form) {

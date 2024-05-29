@@ -27,7 +27,6 @@ export default class EstudiantesController extends Controller {
       // TODO: show modal
       return;
     }
-    //validar si esta
     currentLocalStorage.push(studentForm);
     localStorage.setItem(
       Constants.STUDENTS,

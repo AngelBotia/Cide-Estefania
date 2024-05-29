@@ -37,6 +37,11 @@ body {
   min-height: 100vh;
   text-align: center;
 }
+.datos{
+  width: 100%;
+  text-align: left;
+  padding: 2rem;
+}
 
 .route {
   width: 80%;
@@ -82,6 +87,10 @@ tr:last-child td {
   border-bottom: none;
 }
 
+.tableDialog{
+  width: 100%;
+
+}
 table {
   border-collapse: collapse;
   padding: 0;
@@ -92,7 +101,6 @@ table {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  background-color: lightgrey;
 }
 
 .divTotalFactura {
