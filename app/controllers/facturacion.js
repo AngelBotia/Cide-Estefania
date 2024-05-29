@@ -31,7 +31,7 @@ export default class FacturacionController extends Controller {
     });
     
     const productsToShow = comandaToShow.products.filter((item)=>item.cant>0);
-    productsToShow.map((item)=>{total+= item.total})
+    productsToShow.map((item)=>{total=+ item.total})
     this.invoiceData = {
       numeroFactura: comandaToShow.codigoFactura.toString(),
       fecha: comandaToShow.fecha,

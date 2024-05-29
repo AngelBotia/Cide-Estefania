@@ -41,38 +41,38 @@ export default class ComandasController extends Controller {
           nombre: 'Camiseta',
           price: 8.5,
           cant: form.comedor.value,
-          total: 8.5 * form.chaqueta.value
+          total: (8.5 * form.comedor.value)
 
         },
         {
           nombre: 'Camiseta',
           price: 20,
           cant: form.camiseta.value,
-          total: 20 * form.chaqueta.value
+          total: (20 * form.camiseta.value)
         },
         {
           nombre: 'Pantalones',
           price: 25,
           cant: form.pantalones.value,
-          total: 25 * form.chaqueta.value
+          total: (25 * form.pantalones.value)
         },
         {
           nombre: 'Calcetines',
           price: 25,
           cant: form.calcetines.value,
-          total: 25 * form.chaqueta.value
+          total: (25 * form.calcetines.value)
         },
         {
           nombre: 'Chaqueta',
           price: 25,
           cant: form.chaqueta.value,
-          total: 25 * form.chaqueta.value
+          total: (25 * form.chaqueta.value)
         },
         {
           nombre: 'Babero',
           price: 25,
           cant: form.chaqueta.value,
-          total: 25 * form.chaqueta.value
+          total: (25 * form.babero.value)
         }
       ],
       status: Constants.status.P,
