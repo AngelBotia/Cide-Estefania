@@ -3,9 +3,9 @@
  @logOut={{this.logOut}}
  @user={{this.login.userType}}
  @route="Facturacion"
-
-  >
-    <h1 style="text-align: left;padding: 10px; font-size: xxx-large;">Facturacion</h1>
+  
+>
+  <h1 style="text-align: left;padding: 10px; font-size: xxx-large;">Facturacion</h1>
     <Tabla
     @elements={{this.comandas.comandasList}}
     @route='Facturacion'
@@ -13,7 +13,8 @@
     @onclickUser={{this.onClickUserShowInvoice}}
     @onChangeStatusAdmin={{this.onChangeStatusAdmin}}
     @invoiceData={{this.invoiceData}}
-    ></Tabla>
+    >
+    </Tabla>
 
 
 </Layout>

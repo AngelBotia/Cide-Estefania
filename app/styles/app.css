@@ -10,6 +10,7 @@
   transform: translateY(-3px);
   transition: transform 0.3s ease;
 }
+
 button {
   border-radius: 10px;
   border-color: transparent;
@@ -76,6 +77,7 @@ th {
   border-right: none;
   overflow: hidden;
 }
+
 tr:last-child td {
   border-bottom: none;
 }
@@ -96,6 +98,7 @@ table {
 .divTotalFactura {
   padding-right: 1vw;
 }
+
 .select-status {
   width: 4rem;
   height: 3rem;

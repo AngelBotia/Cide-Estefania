@@ -16,6 +16,7 @@
         <p>Mail:</p>
       </div>
       <div class="datos factura derecha">
+        <p>Usuario: {{@invoiceData.user}}</p>
         <p>Fecha emision: {{@invoiceData.fecha}} </p>
         <p>Numero de factura: {{@invoiceData.numeroFactura}}</p>
       </div>
@@ -25,21 +26,20 @@
     <table class="tableDialog">
       <tr>
         <th>Usuario</th>
-        <th>Hotel id</th>
+        <th></th>
         <th>Fecha</th>
         <th>Description</th>
         <th>PAX</th>
       </tr>
+   {{!-- {{#each @invoiceData.products as | product|}}
       <tr>
-        <td>{{@invoiceData.user}}</td>
-        <td>{{@invoiceData.hotelId}}</td>
-        <td>{{@invoiceData.bookingDate}}</td>
-        <td>{{@invoiceData.description}}</td>
-        <td>{{@invoiceData.pax}}</td>
-      </tr>
+      <td>{{product.nombre}}</td>
+
+
+      </tr> --}}
     </table>
 
-
+  {{!-- {{/each}} --}}
     <div class="facturaTotal">
 
       <div class="divTotalFactura">

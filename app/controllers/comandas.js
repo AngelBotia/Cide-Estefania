@@ -35,30 +35,45 @@ export default class ComandasController extends Controller {
       localStorage.getItem(Constants.USER_CREDENTIALS),
     ).user;
     const formData = {
-      comedor: {
-        price: 8.5,
-        cant: form.comedor.value,
-      },
-      camiseta: {
-        price: 20,
-        cant: form.camiseta.value,
-      },
-      pantalones: {
-        price: 25,
-        cant: form.pantalones.value,
-      },
-      calcetines: {
-        price: 25,
-        cant: form.calcetines.value,
-      },
-      chaqueta: {
-        price: 25,
-        cant: form.chaqueta.value,
-      },
-      babero: {
-        price: 25,
-        cant: form.chaqueta.value,
-      },
+      products: [
+        {
+          nombre: 'Camiseta',
+          price: 8.5,
+          cant: form.comedor.value,
+          total: 8.5 * form.chaqueta.value
+
+        },
+        {
+          nombre: 'Camiseta',
+          price: 20,
+          cant: form.camiseta.value,
+          total: 20 * form.chaqueta.value
+        },
+        {
+          nombre: 'Pantalones',
+          price: 25,
+          cant: form.pantalones.value,
+          total: 25 * form.chaqueta.value
+        },
+        {
+          nombre: 'Calcetines',
+          price: 25,
+          cant: form.calcetines.value,
+          total: 25 * form.chaqueta.value
+        },
+        {
+          nombre: 'Chaqueta',
+          price: 25,
+          cant: form.chaqueta.value,
+          total: 25 * form.chaqueta.value
+        },
+        {
+          nombre: 'Babero',
+          price: 25,
+          cant: form.chaqueta.value,
+          total: 25 * form.chaqueta.value
+        }
+      ],
       status: Constants.status.P,
       user: user,
       codigoFactura: Date.now(),

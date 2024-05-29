@@ -19,22 +19,25 @@ export default class FacturacionController extends Controller {
   @action
   onClickUserShowInvoice(event) {
     const invoice = document.getElementById('factura');
-    const idElement =
-      event.target.parentNode.parentNode.firstElementChild.firstElementChild
-        .innerHTML;
+    const idElement = event.target.parentNode.firstElementChild.innerHTML;
     if (!idElement) return;
     const currentLocalStorageComanda = JSON.parse(
       localStorage.getItem(Constants.COMANDAS_STORAGE),
     );
+    
     const comandaToShow = currentLocalStorageComanda.find((item) => {
       return item.codigoFactura == idElement;
     });
+    
+    const productsToShow = comandaToShow.products.filter((item)=>item.cant>0);
     this.invoiceData = {
       numeroFactura: comandaToShow.codigoFactura.toString(),
       fecha: comandaToShow.fecha,
-      user:comandaToShow.user
+      user: comandaToShow.user,
+      products: productsToShow
     };
-
+    
+    debugger
     invoice.showModal();
   }
   @action

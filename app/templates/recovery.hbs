@@ -1,0 +1,34 @@
+{{page-title "Recovery"}}
+<Loginform
+@title="Recuperar contraseña"
+@buttonText="Recuperar contraseña"
+@askText="¿Ya tienes cuenta?"
+@routeText="Iniciar sesion"
+@hrefAux="/login"
+@onHandleClick={{this.onSubmit}}
+@idForm="loginForm"
+>
+<div style="
+    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+">
+
+      <Inputform @type="text" @placeholder=" usuario" @name="user">
+      Usuario
+      </Inputform>
+
+      <Inputform @placeholder=" contraseña" @type="password" @name="password">
+      Nueva contraseña
+      </Inputform>
+
+     <Inputform @placeholder=" repetir contraseña" @type="password" @name="re-password">
+      Repetir contraseña
+    </Inputform>
+
+</div>
+
+
+</Loginform>
