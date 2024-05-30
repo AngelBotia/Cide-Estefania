@@ -42,8 +42,12 @@ export default class RegistreController extends Controller {
       // this.showSuccesModal(event, false);
       return;
     }
-    if(!this.formData.email.includes('@') || this.formData.email.includes('.') ){
-      this.errorMessage='El email no cumple el formato adecuado ❌ Recuerda que debe incluir @ ';
+    if (
+      !this.formData.email.includes('@') ||
+      this.formData.email.includes('.')
+    ) {
+      this.errorMessage =
+        'El email no cumple el formato adecuado ❌ Recuerda que debe incluir @ ';
       window.alert(this.errorMessage);
       return;
     }

@@ -19,7 +19,10 @@ export default class ComandasController extends Controller {
     event.preventDefault();
     const form = document.getElementById('formComandas');
     const formData = this.getObjectForm(form);
-    if(this.submitEmpty(form)){window.alert('❌ No puedes mandas una comanda vacia'); return;}
+    if (this.submitEmpty(form)) {
+      window.alert('❌ No puedes mandas una comanda vacia');
+      return;
+    }
     const currentLocalStorage = JSON.parse(
       localStorage.getItem(Constants.COMANDAS_STORAGE),
     );
@@ -41,39 +44,38 @@ export default class ComandasController extends Controller {
           nombre: 'Camiseta',
           price: 8.5,
           cant: form.comedor.value,
-          total: (8.5 * form.comedor.value)
-
+          total: 8.5 * form.comedor.value,
         },
         {
           nombre: 'Camiseta',
           price: 20,
           cant: form.camiseta.value,
-          total: (20 * form.camiseta.value)
+          total: 20 * form.camiseta.value,
         },
         {
           nombre: 'Pantalones',
           price: 25,
           cant: form.pantalones.value,
-          total: (25 * form.pantalones.value)
+          total: 25 * form.pantalones.value,
         },
         {
           nombre: 'Calcetines',
           price: 25,
           cant: form.calcetines.value,
-          total: (25 * form.calcetines.value)
+          total: 25 * form.calcetines.value,
         },
         {
           nombre: 'Chaqueta',
           price: 25,
           cant: form.chaqueta.value,
-          total: (25 * form.chaqueta.value)
+          total: 25 * form.chaqueta.value,
         },
         {
           nombre: 'Babero',
           price: 25,
           cant: form.chaqueta.value,
-          total: (25 * form.babero.value)
-        }
+          total: 25 * form.babero.value,
+        },
       ],
       status: Constants.status.P,
       user: user,
@@ -83,14 +85,16 @@ export default class ComandasController extends Controller {
     return formData;
   }
 
-  submitEmpty(form){
-    if(    
+  submitEmpty(form) {
+    if (
       form.comedor.value == 0 &&
       form.camiseta.value == 0 &&
       form.pantalones.value == 0 &&
       form.calcetines.value == 0 &&
       form.chaqueta.value == 0 &&
-      form.babero.value == 0 )return true;
+      form.babero.value == 0
+    )
+      return true;
   }
 
   cleanForm(form) {
