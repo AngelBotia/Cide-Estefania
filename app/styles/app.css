@@ -26,14 +26,14 @@
   height: 25rem;
   margin: 0.2rem;
   border-radius: 1rem;
+  box-shadow: 4px 19px 17px #989;
+  border: 2px solid darkgray;
 }
 .cuerpo-noticia {
   width: 95%;
   margin: auto;
   height: 69%;
   display: block;
-
-
 }
 .cuerpo-noticia img {
   width: 100%;
