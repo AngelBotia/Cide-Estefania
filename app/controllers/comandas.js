@@ -20,7 +20,7 @@ export default class ComandasController extends Controller {
     const form = document.getElementById('formComandas');
     const formData = this.getObjectForm(form);
     if (this.submitEmpty(form)) {
-      window.alert('❌ No puedes mandas una comanda vacia');
+      window.alert('❌ No puedes mandar una comanda vacia');
       return;
     }
     const currentLocalStorage = JSON.parse(

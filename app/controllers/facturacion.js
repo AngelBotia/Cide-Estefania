@@ -18,7 +18,7 @@ export default class FacturacionController extends Controller {
 
   @action
   onClickUserShowInvoice(event) {
-    var total = 0;
+
     const invoice = document.getElementById('factura');
     const idElement = event.target.parentNode.firstElementChild.innerHTML;
     if (!idElement) return;
@@ -33,9 +33,8 @@ export default class FacturacionController extends Controller {
     const productsToShow = comandaToShow.products.filter(
       (item) => item.cant > 0,
     );
-    productsToShow.map((item) => {
-      total = +item.total;
-    });
+    const total = productsToShow.reduce((sum, item) => sum + item.total, 0);
+
     this.invoiceData = {
       numeroFactura: comandaToShow.codigoFactura.toString(),
       fecha: comandaToShow.fecha,
